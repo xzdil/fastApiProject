@@ -17,15 +17,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up Python version
-        uses: actions/setup-python@v1
+      - name: Set up Python version with Conda
+        uses: conda-incubator/setup-miniconda@v2
         with:
           python-version: '3.10'
 
-      - name: Create and start virtual environment
+      - name: Create and activate Conda environment
         run: |
-          python -m venv venv
-          source venv/bin/activate
+          conda create --name antenv --file requirements.txt
+          conda activate antenv
       
       - name: Install dependencies
         run: pip install -r requirements.txt

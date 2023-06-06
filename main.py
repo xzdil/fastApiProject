@@ -16,6 +16,7 @@ async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-@app.get("/predict/")
-async def predict(sentence: str):
-    return await getPredict_cached(sentence)
+@app.get("/predict/{encodedSentence}")
+async def predict(encodedSentence: str):
+    print(encodedSentence)
+    return await getPredict_cached(encodedSentence)

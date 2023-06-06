@@ -44,7 +44,7 @@
       <div class="container-fluid">
         <!-- Navbar brand -->
         <a class="navbar-brand nav-link" target="_blank" href="https://mdbootstrap.com/docs/standard/">
-          <strong>Adil</strong>
+          <strong>Adil Rakhimzhanov</strong>
         </a>
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
           aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,10 +100,13 @@
           <div class="row justify-content-center">
             <div class="col-xl-10 col-md-8">
               <form id="myForm" class="bg-white  rounded-5 shadow-7-strong p-5">
+                <h5>Чтобы найти отсутствующее слово введите предложение и вместо отсутствующего слова вставьте [MASK]</h5>
+                <p>*Модель расчитана на английский язык и плохо работает с русским языком*</p>
+                <br>
                 <div id="loading">
-      <div class="spinner"></div>
-      <p>Идет загрузка...</p>
-    </div>
+                  <div class="spinner"></div>
+                  <p>Идет загрузка...</p>
+                </div>
                 <div id="output"></div>
                   <textarea placeholder="Enter your text" id="input" name="text" class="form-control" rows="3" style="resize: none; height: auto;"></textarea>
                   <br>
@@ -137,11 +140,12 @@
         const loadingDiv = document.getElementById("loading");
         loadingDiv.style.display = "block";
         output.innerHTML = ''
-        fetch('/predict/?sentence=' + encodeURIComponent(sentence))
+        const encodedSentence = encodeURIComponent(sentence);
+        fetch(`/predict/${encodedSentence}`)
           .then(response => response.json())
           .then(data => {
               loadingDiv.style.display = "none";
-              output.appendChild(document.createTextNode(data))
+              output.appendChild(document.createTextNode("Your output is: "+data))
           })
           .catch(error => {
             console.error(error);

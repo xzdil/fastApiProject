@@ -20,6 +20,7 @@ async def getPredict_cached(input_text):
     return result
 
 
+
 async def getPredict(text):
     tokens = tokenizer.encode_plus(text, add_special_tokens=True, padding='longest',
                                    max_length=128, truncation=True, return_tensors='tf')

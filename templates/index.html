@@ -110,6 +110,9 @@
                 <div id="output"></div>
                   <textarea placeholder="Enter your text" id="input" name="text" class="form-control" rows="3" style="resize: none; height: auto;"></textarea>
                   <br>
+                <p id="wordCount">0/128</p>
+                <p id="errorMessage" style="color: red; display: none;">Превышен лимит слов</p>
+
                   <button type="submit" class="btn btn-primary btn-block">Predict</button>
               </form>
             </div>
@@ -151,5 +154,21 @@
             console.error(error);
           });
       });
+    var textarea = document.getElementById("input");
+    var wordCountDisplay = document.getElementById("wordCount");
+    var errorMessage = document.getElementById("errorMessage");
 
+    textarea.addEventListener("input", function() {
+        var wordCount = this.value.trim().split(/\s+/).length;
+        wordCountDisplay.textContent = wordCount + "/128";
+
+        if (wordCount > 128) {
+            errorMessage.style.display = "block";
+            // Если превышено ограничение, удаляем лишние слова
+            var words = this.value.trim().split(/\s+/);
+            this.value = words.slice(0, 128).join(" ");
+        } else {
+            errorMessage.style.display = "none";
+        }
+    });
   </script>

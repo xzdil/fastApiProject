@@ -1,0 +1,151 @@
+  <!--Main Navigation-->
+  <header>
+    <style>
+      #intro {
+        background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
+        height: 100vh;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: -58.59px;
+        }
+      }
+#loading {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+      }
+@keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      #loading .spinner {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js" integrity="sha512-+sCoGPlbKDblqf1cdtmOKPXQOThQgrBYXdkqFvnMijTnPQ6J2NoaqUQNVSzJl/m2ArGFGN0soa/pKKioLBVdwQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.dark.min.css" integrity="sha512-mBHbS6kD/getK5vUTRNDHPJYvJsFl1VTBEa8M0iT3eGS6D5fcEl6hCBLOeY1k4k2JS/cdlwUy7LC14BSbVUBzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.css" integrity="sha512-S7pFEiuqxNHcuJqa+h7Qkb64Xi8OsJuomfvHDrlYngmQ69rLlhtqxbOFQ4oUB/IwmrIsUjRt75MGFZD049mskg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link" target="_blank" href="https://mdbootstrap.com/docs/standard/">
+          <strong>Adil</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="https://github.com/xzdil">My github</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://t.me/dappyx" rel="nofollow"
+                target="_blank">My telegram</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://linkedin.com/in/adil-rakhimzhanov-6a283a251/" target="_blank">My linkedin</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav d-flex flex-row">
+            <!-- Icons -->
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
+                target="_blank">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://www.facebook.com/mdbootstrap" rel="nofollow" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://twitter.com/MDBootstrap" rel="nofollow" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://github.com/mdbootstrap/mdb-ui-kit" rel="nofollow" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image shadow-2-strong">
+      <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-10 col-md-8">
+              <form id="myForm" class="bg-white  rounded-5 shadow-7-strong p-5">
+                <div id="loading">
+      <div class="spinner"></div>
+      <p>Идет загрузка...</p>
+    </div>
+                <div id="output"></div>
+                  <textarea placeholder="Enter your text" id="input" name="text" class="form-control" rows="3" style="resize: none; height: auto;"></textarea>
+                  <br>
+                  <button type="submit" class="btn btn-primary btn-block">Predict</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+  </header>
+
+    <hr class="m-0" />
+
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Dappyx:
+      <a class="text-dark" href="https://github.com/xzdil">Github</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const sentence = document.getElementById("input").value;
+        const output = document.getElementById("output")
+        const loadingDiv = document.getElementById("loading");
+        loadingDiv.style.display = "block";
+        output.innerHTML = ''
+        fetch('/predict/?sentence=' + encodeURIComponent(sentence))
+          .then(response => response.json())
+          .then(data => {
+              loadingDiv.style.display = "none";
+              output.appendChild(document.createTextNode(data))
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      });
+
+  </script>

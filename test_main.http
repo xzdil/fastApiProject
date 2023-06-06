@@ -1,11 +1,11 @@
 # Test your FastAPI endpoints
 
-GET http://20.105.232.27:80/predict/today%20was%20my%20%5BMASK%5D%20and%20parent%20gave%20me%20
+GET http://localhost:80/predict/today%20was%20my%20%5BMASK%5D%20and%20parent%20gave%20me%20
 Accept: application/json
 
 ###
 
-GET http://20.105.232.27:80/
+GET http://localhost:80/
 Accept: application/json
 
 ###

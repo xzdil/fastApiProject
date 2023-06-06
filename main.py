@@ -1,14 +1,16 @@
 from fastapi import FastAPI
 from fastapi import Request, Depends
 from fastapi.templating import Jinja2Templates
+import uvicorn
 from model import getPredict_cached
+import os
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 if __name__ == '__main__':
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)
+    uvicorn.run("main:app", host=os.environ.get("host", 'localhost'), port=os.environ.get("port", 80), reload=True, workers=3)
+
 
 @app.get("/")
 async def index(request: Request):

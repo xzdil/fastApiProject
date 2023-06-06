@@ -25,7 +25,7 @@ async def getPredict(text):
     tokens = tokenizer.encode_plus(text, add_special_tokens=True, padding='longest',
                                    max_length=128, truncation=True, return_tensors='tf')
 
-    output = await asyncio.to_thread(model.predict, tokens.input_ids)
+    output = model.predict(tokens.input_ids)
     logits = output.logits
     predictions = tf.argmax(logits, axis=-1).numpy().tolist()[0]
     predicted_token = tokenizer.decode(predictions)

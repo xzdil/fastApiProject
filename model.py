@@ -1,6 +1,5 @@
 from transformers import BertTokenizer, TFBertForMaskedLM
 import tensorflow as tf
-import asyncio
 from cachetools import TTLCache
 
 

@@ -1,1 +1,1 @@
-uvicorn main:app --host localhost --reload --workers 3
+uvicorn main:app --host localhost --port 80 --reload --workers 3

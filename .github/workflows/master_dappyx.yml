@@ -24,8 +24,7 @@ jobs:
 
       - name: Create and activate Conda environment
         run: |
-          conda -m venv venv
-          source venv/bin/activate
+          conda env create --file environment.yml
       
       - name: Install dependencies
         run: pip install -r requirements.txt

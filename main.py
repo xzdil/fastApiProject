@@ -9,7 +9,7 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 if __name__ == '__main__':
-    uvicorn.run("main:app", host='20.105.232.27', port=int(os.environ.get("PORT", 80)), reload=True, workers=3)
+    uvicorn.run("main:app", host='dappyx.azurewebsites.net', port=int(os.environ.get("PORT", 80)), reload=True, workers=3)
 
 
 @app.get("/")
